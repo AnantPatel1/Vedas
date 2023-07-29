@@ -68,3 +68,6 @@
   margin: 30px 0px;
   font-size: 20px;
 }
+.link:hover {
+  background-color: #ffc846ae;
+}

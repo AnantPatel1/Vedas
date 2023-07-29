@@ -86,7 +86,7 @@ export default function SignUp() {
       <div>
         <Link href="/">
           <BsArrowLeft
-            style={{ margin: "40px 20px -20px 20px", fontSize: "20px" }}
+            style={{ margin: "40px 20px 0px 20px", fontSize: "20px" }}
           />
         </Link>
       </div>
@@ -100,10 +100,8 @@ export default function SignUp() {
         />
       </div>
       <div className={styles.loginContainer}>
-        <header className={styles.header} style={{ marginBottom: "0px" }}>
-          SignUp with Email
-        </header>
-        <div className={styles.description} style={{ marginBottom: "0" }}>
+        <header className={styles.header}>SignUp with Email</header>
+        <div className={styles.description}>
           Welcome back! Sign in using your social account or email to continue
           us
         </div>
@@ -178,7 +176,7 @@ export default function SignUp() {
           )}
         </div>
       </form>
-      <div className={styles.signupbox} style={{ margin: "20px" }}>
+      <div className={styles.signupbox} style={{ margin: "40px 20px" }}>
         <Link disabled={!formValid} className={styles.link} href="/SignUp">
           Create an account
         </Link>
