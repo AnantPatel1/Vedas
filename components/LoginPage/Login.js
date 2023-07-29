@@ -1,6 +1,6 @@
 import Link from "next/link";
 import useInput from "../../Hooks/use-input";
-import styles from "./Login.module.css";
+import styles from "../common.module.css";
 import { BsArrowLeft } from "react-icons/bs";
 import Icons from "../Reusable/Icons";
 import Option from "../Reusable/Option";
@@ -61,7 +61,7 @@ export default function Login() {
         <Option dcolor="#69235b" pcolor="#69235b99" />
       </div>
       <form className={styles.inputBox} onSubmit={formSubmitHandler}>
-        <div className={styles.email}>
+        <div className={styles["form-control"]}>
           <p>Your email</p>
           <input
             type="text"
@@ -72,7 +72,7 @@ export default function Login() {
             className={styles.inputbtn}
           />
         </div>
-        <div className={styles.passward}>
+        <div className={styles["form-control"]}>
           <p>Passward</p>
 
           <input
@@ -96,7 +96,7 @@ export default function Login() {
 
         <p>
           <Link
-            href="/Login"
+            href="/"
             style={{
               color: "#FFC746",
               textDecoration: "none",

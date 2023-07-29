@@ -5,7 +5,8 @@
 }
 .loginContainer,
 .signupbox,
-.link {
+.link,
+.themeContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,6 +18,7 @@
   margin: 10px;
 }
 .description {
+  text-align: center;
   margin: 25px;
   font-family: "Inter", sans-serif;
   font-size: 15px;
@@ -26,17 +28,34 @@
 .inputBox {
   padding: 10px 20px;
 }
-.inputBox p {
+.form-control p {
   color: #69235b;
   font-size: large;
 }
-.inputbtn {
+.name-control-invalid p,
+.email-control-invalid p,
+.password-control-invalid p,
+.confpasssword-control-invalid p {
+  color: red;
+  font-size: large;
+}
+.form-control input,
+.name-control-invalid input,
+.email-control-invalid input,
+.password-control-invalid input,
+.confpasssword-control-invalid input {
   border: none;
   border-bottom: 1px solid #cdd1d0;
   background: none;
   width: 100%;
   font-size: 15px;
   height: 30px;
+}
+.name-control-invalid input,
+.email-control-invalid input,
+.password-control-invalid input,
+.confpasssword-control-invalid input {
+  border-bottom: 1px solid red;
 }
 
 .inputbtn:focus {
@@ -71,4 +90,8 @@
 }
 .formInvalid {
   background-color: #ffc84661;
+}
+.error-text {
+  margin-left: 50%;
+  font-size: smaller;
 }
