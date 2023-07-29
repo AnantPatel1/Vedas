@@ -1,0 +1,30 @@
+.ThemePage {
+  position: relative;
+  flex-direction: column;
+  text-align: center;
+  width: 425px;
+  background-color: white;
+}
+.container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container2 {
+  position: absolute;
+  bottom: 10%;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+}
+.link {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+@media screen and (max-width: 425px) {
+  .ThemePage {
+    width: 100%;
+  }
+}

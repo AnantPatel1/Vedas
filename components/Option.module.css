@@ -1,0 +1,13 @@
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.478);
+  font-weight: lighter;
+  margin: 20px 0px;
+}
+.options p {
+  width: 40%;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.478);
+  margin: 0px 10px;
+}

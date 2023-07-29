@@ -1,0 +1,23 @@
+.icons div {
+  width: 30%;
+  border-radius: 80%;
+  height: 100%;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Connections,
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Connections {
+  height: 48px;
+}
+.icons {
+  width: 184px;
+  height: 100%;
+  justify-content: space-between;
+}
