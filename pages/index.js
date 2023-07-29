@@ -1,6 +1,6 @@
 import { Fragment, useState, useEffect } from "react";
-import HomePage from "../components/HomePage";
-import LandingPage from "../components/LoadingPage";
+import HomePage from "../components/Home/HomePage";
+import LandingPage from "../components/LoaderPage/LoadingPage";
 import styles from "../styles/index.module.css";
 export default function Home() {
   const [loading, setLoading] = useState(true);

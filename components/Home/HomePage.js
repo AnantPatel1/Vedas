@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./HomePage.module.css";
 import Image from "next/image";
-import Arya from "../Assets/arya.png";
-import Icons from "./Icons";
-import Option from "./Option";
+import Arya from "../../Assets/arya.png";
+import Icons from "../Reusable/Icons";
+import Option from "../Reusable/Option";
 import Link from "next/link";
 export default function HomePage() {
   return (
@@ -26,11 +26,21 @@ export default function HomePage() {
       <Icons />
       <Option />
       <div className={styles.signupbox}>
-        <Link className={styles.link} href="/login">
+        <Link className={styles.link} href="/SignUp">
           Sign Up with Mail
         </Link>
         <p>
-          Existing account?<span> Log in</span>
+          Existing account?
+          <Link
+            href="/Login"
+            style={{
+              color: "#FBBC04",
+              textDecoration: "none",
+              marginLeft: "2px",
+            }}
+          >
+            Log in
+          </Link>
         </p>
       </div>
     </div>

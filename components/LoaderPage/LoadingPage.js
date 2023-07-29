@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import Theme from "../Assets/MOKx.png";
+import Theme from "../../Assets/MOKx.png";
 import styles from "./LandingPage.module.css";
 import Image from "next/image";
 import Link from "next/link";
