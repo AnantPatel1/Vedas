@@ -23,8 +23,11 @@ export default function HomePage() {
           <span>journey through ancient knowledge with Arya 🌟</span>
         </p>
       </div>
-      <Icons />
-      <Option />
+      <Icons borderColor="white" Facolor="white" ApColor="white" />
+      <Option
+        dcolor="rgba(255, 255, 255, 0.478)"
+        pcolor="rgba(255, 255, 255, 0.478)"
+      />
       <div className={styles.signupbox}>
         <Link className={styles.link} href="/SignUp">
           Sign Up with Mail

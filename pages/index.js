@@ -7,7 +7,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000); // Show the spinner for 1 seconds (2000 milliseconds)
+    }, 1000); // Show the spinner for 1 seconds (2000 milliseconds)
 
     return () => clearTimeout(timer);
   }, []); // Run this effect only once on initial render

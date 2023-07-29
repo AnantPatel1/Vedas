@@ -1,0 +1,74 @@
+.container {
+  width: 425px;
+  height: 100%;
+  padding: 1px;
+}
+.loginContainer,
+.signupbox,
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.header {
+  font-size: 30px;
+  color: #69235b;
+  margin: 10px;
+}
+.description {
+  margin: 25px;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #69235b;
+}
+.inputBox {
+  padding: 10px 20px;
+}
+.inputBox p {
+  color: #69235b;
+  font-size: large;
+}
+.inputbtn {
+  border: none;
+  border-bottom: 1px solid #cdd1d0;
+  background: none;
+  width: 100%;
+  font-size: 15px;
+  height: 30px;
+}
+
+.inputbtn:focus {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #69235b;
+}
+.signupbox {
+  margin: 80px 10px;
+}
+.link {
+  font-size: 20px;
+  text-decoration: none;
+  color: #69235b;
+  height: 54px;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  background-color: #ffc746;
+  margin-bottom: 0;
+}
+.signupbox p {
+  color: white;
+  margin: 10px 0px;
+  font-size: 20px;
+}
+.signupbox button {
+  width: 100%;
+  border: none;
+  text-align: center;
+  background: none;
+}
+.formInvalid {
+  background-color: #ffc84661;
+}
