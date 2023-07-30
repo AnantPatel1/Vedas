@@ -1,8 +1,7 @@
 .chatroom {
   width: 425px;
   height: 100%;
-  background-color: rgba(159, 155, 155, 0.201);
-  border-radius: 5px;
+  background-color: #f8f8ff;
   overflow: hidden;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
   position: relative;
@@ -25,20 +24,18 @@
   padding: 0 20px;
   margin: 10px 0 0;
   height: 100vh;
-  overflow-y: scroll;
 }
 
 .chat,
 .content {
   color: white;
   position: relative;
-  padding: 5px 13px;
+  padding: 2px 13px;
   font-size: 14px;
-  border-radius: 10px;
   list-style: none;
   float: left;
   clear: both;
-  margin: 10px 0;
+  margin: 3px 0;
   max-width: 300px;
 }
 .content {
@@ -50,7 +47,8 @@
   border-radius: 50%;
   position: relative;
 }
-.chat {
+.chat,
+.input {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,22 +59,21 @@
 }
 .contentright {
   background-color: #fbbc04;
+  border-radius: 20px 0px 20px 20px;
 }
 .contentleft {
   background-color: #69235b;
+  border-radius: 0px 20px 20px 20px;
 }
 
 .chatroom .chats .chat a {
   text-decoration: none;
   color: #3498db;
 }
-.input div {
+.inputbox {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-}
-.input div {
-  width: 425px;
+  width: 375px;
   height: 56px;
   position: fixed;
   bottom: 4%;
@@ -123,8 +120,8 @@
 }
 
 @media screen and (max-width: 426px) {
-  .input div {
-    width: 100%;
+  .inputbox {
+    width: 90%;
   }
   .sendbtn {
     right: 16%;

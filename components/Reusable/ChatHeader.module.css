@@ -21,10 +21,13 @@
   color: #fbbc04;
   width: 30%;
 }
+.box2 p:hover {
+  cursor: pointer;
+}
 .innerbox {
   justify-content: start;
+  position: relative;
 }
-
 .description p {
   margin: 2px 0px 0px 10px;
   font-size: 16px;
@@ -35,4 +38,16 @@
   margin: 2px 0px 0px 10px;
   font-size: 12px;
   color: #797c7b;
+}
+.logoImage:hover {
+  cursor: pointer;
+}
+.ellipse {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #2bef83;
+  left: 30px;
+  top: 30px;
 }

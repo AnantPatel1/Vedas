@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ChatHeader.module.css";
 import { BsArrowLeft } from "react-icons/bs";
 import Image from "next/image";
-import bot from "../../Assets/aiarya.png";
+import bot from "../../Assets/aryaai.svg";
 import Link from "next/link";
 export default function ChatHeader() {
   return (
@@ -15,7 +15,14 @@ export default function ChatHeader() {
           </Link>
         </div>
         <div className={styles.innerbox}>
-          <Image src={bot} width={40} height={40} alt="logo" />
+          <Image
+            src={bot}
+            width={40}
+            height={40}
+            alt="logo"
+            className={styles.logoImage}
+          />
+          <div className={styles.ellipse}></div>
           <div className={styles.description}>
             <p>Arya</p>
             <span>Vedic AI bot</span>

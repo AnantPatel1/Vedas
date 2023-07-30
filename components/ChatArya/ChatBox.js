@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import styles from "./ChatBox.module.css";
 import send from "../../Assets/send.png";
 import microphone from "../../Assets/microphone.png";
@@ -33,15 +33,6 @@ const ChatBox = () => {
   const chatsRef = useRef(null);
   const msgRef = useRef(null);
 
-  useEffect(() => {
-    scrollToBot();
-  }, [chats]);
-
-  const scrollToBot = () => {
-    const chatsNode = chatsRef.current;
-    chatsNode.scrollTop = chatsNode.scrollHeight;
-  };
-
   const submitMessage = (event) => {
     event.preventDefault();
     const newMessage = msgRef.current.value.trim();
@@ -64,11 +55,12 @@ const ChatBox = () => {
         ))}
       </ul>
       <form className={styles.input} onSubmit={submitMessage}>
-        <div>
+        <div className={styles.inputbox}>
           <input
             type="text"
             placeholder="Write your message here"
             ref={msgRef}
+            style={{ width: "70%" }}
           />
         </div>
         <Image
