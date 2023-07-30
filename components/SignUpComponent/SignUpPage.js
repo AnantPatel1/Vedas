@@ -2,7 +2,7 @@ import Link from "next/link";
 import useInput from "../../Hooks/use-input";
 import styles from "../common.module.css";
 import { BsArrowLeft } from "react-icons/bs";
-import theme from "../../Assets/MOkx.png";
+import theme from "../../Assets/Logo.png";
 import Image from "next/image";
 export default function SignUp() {
   let EnteredConfirmPasswordHasError = false;

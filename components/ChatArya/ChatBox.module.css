@@ -1,0 +1,135 @@
+.chatroom {
+  width: 425px;
+  height: 100%;
+  background-color: rgba(159, 155, 155, 0.201);
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.chatroom h3 {
+  font-family: "Pacifico", cursive;
+  background-color: rgba(30, 228, 148, 0.7);
+  color: #fff;
+  margin: 0;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatroom .chats {
+  box-sizing: border-box;
+  padding: 0 20px;
+  margin: 10px 0 0;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.chat,
+.content {
+  color: white;
+  position: relative;
+  padding: 5px 13px;
+  font-size: 14px;
+  border-radius: 10px;
+  list-style: none;
+  float: left;
+  clear: both;
+  margin: 10px 0;
+  max-width: 300px;
+}
+.content {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  margin: 4px;
+}
+.aiImage {
+  border-radius: 50%;
+  position: relative;
+}
+.chat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right {
+  float: right;
+  clear: both;
+}
+.contentright {
+  background-color: #fbbc04;
+}
+.contentleft {
+  background-color: #69235b;
+}
+
+.chatroom .chats .chat a {
+  text-decoration: none;
+  color: #3498db;
+}
+.input div {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.input div {
+  width: 425px;
+  height: 56px;
+  position: fixed;
+  bottom: 4%;
+  border-radius: 30px;
+  background-color: white;
+}
+.input input {
+  margin: 0 0 0 10px;
+  text-align: start;
+  font-size: 18px;
+  border: none;
+}
+.input input:focus {
+  outline: none;
+}
+.sendbtn,
+.microbtn {
+  position: fixed;
+  right: 41%;
+  bottom: 6.6%;
+}
+.microbtn {
+  right: 38%;
+}
+.sendbtn:hover,
+.microbtn:hover {
+  cursor: pointer;
+}
+@media screen and (max-width: 1024px) {
+  .sendbtn {
+    right: 35%;
+  }
+  .microbtn {
+    right: 32%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .sendbtn {
+    right: 30%;
+  }
+  .microbtn {
+    right: 26%;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .input div {
+    width: 100%;
+  }
+  .sendbtn {
+    right: 16%;
+  }
+  .microbtn {
+    right: 7%;
+  }
+}
