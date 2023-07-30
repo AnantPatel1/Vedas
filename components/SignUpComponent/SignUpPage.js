@@ -177,7 +177,7 @@ export default function SignUp() {
         </div>
       </form>
       <div className={styles.signupbox} style={{ margin: "40px 20px" }}>
-        <Link disabled={!formValid} className={styles.link} href="/SignUp">
+        <Link className={styles.link} href="/chat">
           Create an account
         </Link>
         <p>

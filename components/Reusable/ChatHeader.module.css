@@ -1,0 +1,38 @@
+.header,
+.box1,
+.box2,
+.innerbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+}
+.header {
+  justify-content: space-between;
+  padding: 10px;
+  height: 110px;
+}
+.box1 {
+  justify-content: space-between;
+}
+.box2 {
+  justify-content: end;
+  color: #fbbc04;
+  width: 30%;
+}
+.innerbox {
+  justify-content: start;
+}
+
+.description p {
+  margin: 2px 0px 0px 10px;
+  font-size: 16px;
+  color: #69235b;
+  font-weight: 500;
+}
+.description span {
+  margin: 2px 0px 0px 10px;
+  font-size: 12px;
+  color: #797c7b;
+}

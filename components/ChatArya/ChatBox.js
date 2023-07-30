@@ -4,6 +4,7 @@ import send from "../../Assets/send.png";
 import microphone from "../../Assets/microphone.png";
 import Image from "next/image";
 import Message from "./Message";
+import ChatHeader from "../Reusable/ChatHeader";
 const ChatBox = () => {
   const [chats, setChats] = useState([
     {
@@ -53,11 +54,10 @@ const ChatBox = () => {
     ]);
     msgRef.current.value = "";
   };
-  console.log(chats);
 
   return (
     <div className={styles.chatroom}>
-      <h3>Chilltime</h3>
+      <ChatHeader />
       <ul className={styles.chats} ref={chatsRef}>
         {chats.map((chat, index) => (
           <Message key={index} chat={chat} user={username} />
