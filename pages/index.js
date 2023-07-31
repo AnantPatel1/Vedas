@@ -3,6 +3,7 @@ import HomePage from "../components/Home/HomePage";
 import LandingPage from "../components/LoaderPage/LoadingPage";
 import styles from "../styles/index.module.css";
 import Head from "next/head";
+
 export default function Home() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {

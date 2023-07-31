@@ -4,7 +4,7 @@ import styles from "../common.module.css";
 import { BsArrowLeft } from "react-icons/bs";
 import Icons from "../Reusable/Icons";
 import Option from "../Reusable/Option";
-export default function Login() {
+export default function LoginComponent() {
   const {
     value: enteredpassword,
     isValid: enterednameValid,

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import styles from "../../styles/index.module.css";
-import LoginPage from "../../components/LoginPage/Login";
+import LoginPage from "../../components/LoginPage/LoginComponent";
 import Head from "next/head";
 export default function Login() {
   return (
