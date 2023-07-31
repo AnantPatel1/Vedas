@@ -9,7 +9,12 @@ export default function HomePage() {
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
-        <Image className={styles.AiImage} src={Arya} alt="Arya" />
+        <Image
+          className={styles.AiImage}
+          src={Arya}
+          alt="Arya"
+          priority={true}
+        />
         <figcaption className={styles.aiDescription}>
           Arya, Vedic AI Guide
         </figcaption>
