@@ -62,6 +62,7 @@ const ChatBox = () => {
           height={25}
           alt="send"
           loading="lazy"
+          onClick={submitMessage}
         />
         {/* Microphone button */}
         <Image

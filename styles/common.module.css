@@ -13,10 +13,27 @@
   align-items: center;
   flex-direction: column;
 }
-.header {
+.header,
+.headeremail {
+  position: relative;
   font-size: 30px;
   color: #69235b;
   margin: 10px;
+  font-weight: 700;
+}
+.header::after,
+.headeremail::after {
+  content: "";
+  position: absolute;
+  bottom: 2px; /* Adjust this value to control the distance of the line from the text */
+  left: 0;
+  width: 85px;
+  height: 8px; /* Adjust this value to control the thickness of the line */
+  background-color: #ffc746; /* Yellowish color */
+  z-index: -1; /* To position the pseudo-element behind the text */
+}
+.headeremail::after {
+  left: 180px;
 }
 .description {
   text-align: center;

@@ -79,7 +79,7 @@ export default function LoginComponent() {
       </div>
       {/* Login container */}
       <div className={styles.loginContainer}>
-        <header className={styles.header}>Log in to Mokx</header>
+        <header className={styles.header}>Login to Mokx</header>
         <div className={styles.description}>
           Welcome back! Sign in using your social account or email to continue
           us
@@ -102,7 +102,7 @@ export default function LoginComponent() {
       {/* Signup and Forgot Password links */}
       <div className={styles.signupbox}>
         {formValid ? (
-          <Link disabled={!formValid} className={styles.link} href="/SignUp">
+          <Link className={styles.link} href="/chat">
             Login
           </Link>
         ) : (

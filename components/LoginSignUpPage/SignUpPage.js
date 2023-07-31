@@ -125,7 +125,7 @@ export default function SignUp() {
         />
       </div>
       <div className={styles.loginContainer}>
-        <header className={styles.header}>SignUp with Email</header>
+        <header className={styles.headeremail}>SignUp with Email</header>
         <div className={styles.description}>
           Welcome back! Sign in using your social account or email to continue
           us
