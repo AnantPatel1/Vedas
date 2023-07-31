@@ -6,7 +6,7 @@ import styles from "../../styles/common.module.css";
 import { BsArrowLeft } from "react-icons/bs";
 import Icons from "../Reusable/Icons";
 import Option from "../Reusable/Option";
-import FormField from "./FromFeild"; // Assuming there's a typo here and the component name is "FormField".
+import FormField from "./FromFeild";
 
 export default function LoginComponent() {
   // State and Input Handlers for email and password inputs

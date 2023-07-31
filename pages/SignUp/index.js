@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import styles from "../../styles/index.module.css";
-import SignUpComponent from "../../components/SignUpComponent/SignUpPage";
+import SignUpComponent from "../../components/LoginSignUpPage/SignUpPage";
 import Head from "next/head";
 export default function Sign() {
   return (

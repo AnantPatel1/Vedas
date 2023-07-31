@@ -1,35 +1,15 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import styles from "./ChatBox.module.css";
 import send from "../../Assets/send.png";
 import microphone from "../../Assets/microphone.png";
 import Image from "next/image";
 import Message from "./Message";
 import ChatHeader from "../Reusable/ChatHeader";
+import ChatData from "./ChatData";
 
 const ChatBox = () => {
-  // Initial chat messages
-  const [chats, setChats] = useState([
-    {
-      username: "Anant",
-      content: "Hello! How are you",
-    },
-    {
-      username: "Arya",
-      content: "Hello! Nazrul, how are you?",
-    },
-    {
-      username: "Anant",
-      content: "You did your job well",
-    },
-    {
-      username: "Arya",
-      content: "Have a great working week!",
-    },
-    {
-      username: "Arya",
-      content: "Hope You like it",
-    },
-  ]);
+  // Initial chat messages4
+  const { chats, setChats } = ChatData();
 
   // Current user's username (Assuming it's "Arya" for this chatbox)
   const username = "Arya";
@@ -54,7 +34,7 @@ const ChatBox = () => {
 
   return (
     <div className={styles.chatroom}>
-      {/* Comment: ChatHeader component */}
+      {/*  ChatHeader component */}
       <ChatHeader />
 
       <ul className={styles.chats} ref={chatsRef}>

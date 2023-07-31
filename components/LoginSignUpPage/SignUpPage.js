@@ -4,7 +4,7 @@ import styles from "../../styles/common.module.css";
 import { BsArrowLeft } from "react-icons/bs";
 import theme from "../../Assets/Logo.png";
 import Image from "next/image";
-import FormField from "../LoginPage/FromFeild";
+import FormField from "./FromFeild";
 export default function SignUp() {
   let EnteredConfirmPasswordHasError = false;
   let formValid = false;
