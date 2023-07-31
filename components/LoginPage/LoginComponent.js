@@ -4,15 +4,15 @@ import styles from "../../styles/common.module.css";
 import { BsArrowLeft } from "react-icons/bs";
 import Icons from "../Reusable/Icons";
 import Option from "../Reusable/Option";
+import FormField from "./FromFeild";
 export default function LoginComponent() {
   const {
     value: enteredpassword,
-    isValid: enterednameValid,
+    isValid: enteredpasswordValid,
     enteredValueHandler: enteredpasswordHandler,
     InputBlurHandler: PasswordInputBlurHandler,
     resetForm: resetNameInput,
-  } = useInput((value) => value.length > 8);
-
+  } = useInput((value) => value.length > 5);
   const {
     value: enteredemail,
     isValid: enteredemailValid,
@@ -21,10 +21,29 @@ export default function LoginComponent() {
     resetForm: resetEmailInput,
   } = useInput((value) => value.includes("@"));
   let formValid = false;
-
-  if (enterednameValid && enteredemailValid) {
+  if (enteredpasswordValid && enteredemailValid) {
     formValid = true;
   }
+  const inputFields = [
+    {
+      id: "email",
+      label: "Your email",
+      value: enteredemail,
+      type: "email",
+      isValid: enteredemailValid,
+      valueChangeHandler: enteredemailHandler,
+      inputBlurHandler: EmailInputBlurHandler,
+    },
+    {
+      id: "password",
+      label: "Password",
+      type: "password",
+      value: enteredpassword,
+      isValid: enteredpasswordValid,
+      valueChangeHandler: enteredpasswordHandler,
+      inputBlurHandler: PasswordInputBlurHandler,
+    },
+  ];
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
@@ -32,13 +51,10 @@ export default function LoginComponent() {
     if (!enterednameValid || !enteredemailValid) {
       return;
     }
-    console.log(enteredname);
 
     resetNameInput();
 
     resetEmailInput();
-    // NameInputRef.current.value = "";
-    // this useRef() method to empty the input box is not ideal as you cannot directly manipulate the DOM
   };
   return (
     <div className={styles.container}>
@@ -61,29 +77,9 @@ export default function LoginComponent() {
         <Option dcolor="#69235b" pcolor="#69235b99" />
       </div>
       <form className={styles.inputBox} onSubmit={formSubmitHandler}>
-        <div className={styles["form-control"]}>
-          <p>Your email</p>
-          <input
-            type="text"
-            id="name"
-            onChange={enteredemailHandler}
-            onBlur={EmailInputBlurHandler}
-            value={enteredemail}
-            className={styles.inputbtn}
-          />
-        </div>
-        <div className={styles["form-control"]}>
-          <p>Passward</p>
-
-          <input
-            type="email"
-            id="email"
-            onChange={enteredpasswordHandler}
-            onBlur={PasswordInputBlurHandler}
-            value={enteredpassword}
-            className={styles.inputbtn}
-          />
-        </div>
+        {inputFields.map((field) => (
+          <FormField key={field.id} {...field} />
+        ))}
       </form>
       <div className={styles.signupbox}>
         {formValid ? (

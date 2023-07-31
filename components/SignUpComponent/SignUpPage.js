@@ -4,6 +4,7 @@ import styles from "../../styles/common.module.css";
 import { BsArrowLeft } from "react-icons/bs";
 import theme from "../../Assets/Logo.png";
 import Image from "next/image";
+import FormField from "../LoginPage/FromFeild";
 export default function SignUp() {
   let EnteredConfirmPasswordHasError = false;
   let formValid = false;
@@ -22,7 +23,7 @@ export default function SignUp() {
     enteredValueHandler: enteredpasswordHandler,
     InputBlurHandler: PasswordInputBlurHandler,
     resetForm: resetPasswordInput,
-  } = useInput((value) => value.length > 8);
+  } = useInput((value) => value.length > 5);
 
   const {
     value: enteredemail,
@@ -37,7 +38,7 @@ export default function SignUp() {
     isValid: confirmPasswordisValid,
     resetForm: resetconfirmPassword,
     enteredValueHandler: enteredconfirmPasswordHandler,
-  } = useInput((value) => value.length > 8);
+  } = useInput((value) => value.length > 5);
   if (enteredconfirmPassword != enteredconfirmPassword) {
     EnteredConfirmPasswordHasError = true;
   }
@@ -53,6 +54,48 @@ export default function SignUp() {
   ) {
     formValid = true;
   }
+  const inputFields = [
+    {
+      id: "name",
+      label: "Your name",
+      type: "text",
+      value: EnteredName,
+      isValid: EnteredNameIsValid,
+      hasError: EnteredNameHasError,
+      valueChangeHandler: EnteredNameHandler,
+      inputBlurHandler: InputNameBlurHandler,
+    },
+    {
+      id: "email",
+      label: "Your email",
+      value: enteredemail,
+      type: "email",
+      isValid: enteredemailValid,
+      hasError: EnteredEamilHasError,
+      valueChangeHandler: enteredemailHandler,
+      inputBlurHandler: EmailInputBlurHandler,
+    },
+    {
+      id: "password",
+      label: "Password",
+      type: "password",
+      value: enteredpassword,
+      isValid: enteredpasswordValid,
+      hasError: EnteredPasswordHasError,
+      valueChangeHandler: enteredpasswordHandler,
+      inputBlurHandler: PasswordInputBlurHandler,
+    },
+    {
+      id: "confirmPassword",
+      label: "Confirm Password",
+      type: "password",
+      value: enteredconfirmPassword,
+      isValid: confirmPasswordisValid,
+      hasError: EnteredConfirmPasswordHasError,
+      valueChangeHandler: enteredconfirmPasswordHandler,
+      inputBlurHandler: PasswordInputBlurHandler,
+    },
+  ];
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
@@ -62,18 +105,7 @@ export default function SignUp() {
     resetEmailInput();
     resetconfirmPassword();
   };
-  const NameInputClass = EnteredNameHasError
-    ? "name-control-invalid"
-    : "form-control";
-  const EmailInputClass = EnteredEamilHasError
-    ? "email-control-invalid"
-    : "form-control";
-  const PasswordInputClass = EnteredPasswordHasError
-    ? "password-control-invalid"
-    : "form-control";
-  const ConfirmPasswordInputClass = EnteredConfirmPasswordHasError
-    ? "confpasssword-control-invalid"
-    : "form-control";
+
   return (
     <div className={styles.container}>
       <div>
@@ -100,79 +132,18 @@ export default function SignUp() {
         </div>
       </div>
       <form className={styles.inputBox} onSubmit={formSubmitHandler}>
-        <div className={`${styles[NameInputClass]}`}>
-          <p style={{ marginBottom: "10px" }}>Your name</p>
-          <input
-            type="text"
-            id="name"
-            onChange={EnteredNameHandler}
-            onBlur={InputNameBlurHandler}
-            value={EnteredName}
-            style={{ height: "20px" }}
-            className={styles.inputbtn}
-          />
-          {EnteredNameHasError && (
-            <p style={{ color: "red", fontSize: "10px", float: "right" }}>
-              Enter the valid name
-            </p>
-          )}
-        </div>
-        <div className={`${styles[EmailInputClass]}`}>
-          <p style={{ marginBottom: "10px" }}>Your email</p>
-          <input
-            type="text"
-            id="email"
-            onChange={enteredemailHandler}
-            onBlur={EmailInputBlurHandler}
-            value={enteredemail}
-            style={{ height: "20px" }}
-            className={styles.inputbtn}
-          />
-          {EnteredEamilHasError && (
-            <p style={{ color: "red", fontSize: "10px", float: "right" }}>
-              Enter valid email
-            </p>
-          )}
-        </div>
-        <div className={`${styles[PasswordInputClass]}`}>
-          <p>Password</p>
-          <input
-            type="password"
-            id="password"
-            onChange={enteredpasswordHandler}
-            onBlur={EmailInputBlurHandler}
-            value={enteredpassword}
-            style={{ height: "20px" }}
-            className={styles.inputbtn}
-          />
-          {EnteredPasswordHasError && (
-            <p style={{ color: "red", fontSize: "10px", float: "right" }}>
-              Enter valid Password
-            </p>
-          )}
-        </div>
-        <div className={`${styles[ConfirmPasswordInputClass]}`}>
-          <p>Confirm Passward</p>
-          <input
-            type="password"
-            id="confirmpassword"
-            onChange={enteredconfirmPasswordHandler}
-            onBlur={PasswordInputBlurHandler}
-            value={enteredconfirmPassword}
-            style={{ height: "20px" }}
-            className={styles.inputbtn}
-          />
-          {EnteredConfirmPasswordHasError && (
-            <p style={{ color: "red", fontSize: "10px", float: "right" }}>
-              Enter valid Password
-            </p>
-          )}
-        </div>
+        {inputFields.map((field) => (
+          <FormField key={field.id} {...field} />
+        ))}
       </form>
       <div className={styles.signupbox} style={{ margin: "40px 20px" }}>
-        <Link className={styles.link} href="/chat">
-          Create an account
-        </Link>
+        {formValid ? (
+          <Link className={styles.link} href="/chat">
+            Create an account
+          </Link>
+        ) : (
+          <p className={styles.link}>Verify to Proceede</p>
+        )}
         <p>
           <Link
             href="/Login"
