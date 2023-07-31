@@ -3,13 +3,32 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
+
 Hindu Sculpture AI Chat is a web application built using Next.js that allows users to have interactive conversations with an AI about Hindu Sculpture. The AI is trained to provide insightful information, answer questions, and engage users in discussions related to Hindu sculptures, art, and culture.
 
 The project aims to promote awareness and understanding of Hindu sculptures and their significance in art and religion. It offers an engaging and educational experience for users interested in exploring the rich heritage of Hindu art.
 
 ## Live Demo
 
-You can check out the live demo of the project [here](https://64c7ad004e26590008e05d1a--anant-vedas.netlify.app/).
+You can check out the live demo of the project [here](https://anant-vedas.netlify.app/).
+
+## Screenshots
+
+Include some visually appealing screenshots of your project here to give users an idea of its interface and features. You can use the following format:
+
+![Screenshot 2023-07-31 183943](https://github.com/AnantPatel1/Vedas/assets/106820511/9a2bba34-ba67-4db1-92b9-3d55efe52167)
+
+![Screenshot 2023-07-31 184015](https://github.com/AnantPatel1/Vedas/assets/106820511/722bc5fc-500b-4dbd-bb20-9b16ff5968ab)
+
+![Screenshot 2023-07-31 184103](https://github.com/AnantPatel1/Vedas/assets/106820511/b3be27ed-53d9-4d42-a78e-6edc0bd5bd10)
+
+![Screenshot 2023-07-31 184143](https://github.com/AnantPatel1/Vedas/assets/106820511/b7e3a9ac-fed2-43f4-ac5e-1887d369ceba)
+
+![Screenshot 2023-07-31 184806](https://github.com/AnantPatel1/Vedas/assets/106820511/91cfc77e-7d30-429e-8d5d-4e91c53d784a)
+
+
+
+
 
 ## Features
 
@@ -56,8 +75,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For any questions or feedback, please reach out to us:
 
-- Email: anantpatel07012003@gmail.com
-- LinkedIn: [Anant Patel](https://www.linkedin.com/in/anant-patel-63917820b)
+- Email: your.email@example.com
+- Twitter: [@yourTwitterHandle](https://twitter.com/yourTwitterHandle)
 
 ---
 
