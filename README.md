@@ -57,7 +57,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For any questions or feedback, please reach out to us:
 
 - Email: anantpatel07012003@gmail.com
-- LinkedIn: [@yourLinkedInHandle](https://www.linkedin.com/in/anant-patel-63917820b)
+- LinkedIn: [Anant Patel](https://www.linkedin.com/in/anant-patel-63917820b)
 
 ---
 
