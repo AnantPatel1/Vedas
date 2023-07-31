@@ -79,8 +79,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For any questions or feedback, please reach out to us:
 
-- Email: your.email@example.com
-- Twitter: [@yourTwitterHandle](https://twitter.com/yourTwitterHandle)
+- Email: Anant@gmail
+- Twitter: [AnantPatel](https://twitter.com/yourTwitterHandle)
 
 ---
 
