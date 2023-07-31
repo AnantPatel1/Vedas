@@ -106,7 +106,12 @@ export default function LoginComponent() {
             Login
           </Link>
         ) : (
-          <p className={`${styles.formInvalid} ${styles.link}`}>Login</p>
+          <p
+            className={`${styles.formInvalid} ${styles.link}`}
+            style={{ backgroundColor: "#a5a8a6" }}
+          >
+            Login
+          </p>
         )}
         <p>
           <Link

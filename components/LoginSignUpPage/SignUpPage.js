@@ -142,7 +142,9 @@ export default function SignUp() {
             Create an account
           </Link>
         ) : (
-          <p className={styles.link}>Verify to Proceede</p>
+          <p className={styles.link} style={{ backgroundColor: "#a5a8a6" }}>
+            Verify to Proceede
+          </p>
         )}
         <p>
           <Link
