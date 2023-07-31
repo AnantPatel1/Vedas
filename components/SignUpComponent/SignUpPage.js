@@ -6,6 +6,7 @@ import theme from "../../Assets/Logo.png";
 import Image from "next/image";
 export default function SignUp() {
   let EnteredConfirmPasswordHasError = false;
+  let formValid = false;
   const {
     value: EnteredName,
     isValid: EnteredNameIsValid,
@@ -31,7 +32,6 @@ export default function SignUp() {
     InputBlurHandler: EmailInputBlurHandler,
     resetForm: resetEmailInput,
   } = useInput((value) => value.includes("@"));
-  let formValid = false;
   const {
     value: enteredconfirmPassword,
     isValid: confirmPasswordisValid,
@@ -57,17 +57,10 @@ export default function SignUp() {
   const formSubmitHandler = (event) => {
     event.preventDefault();
 
-    if (!enterednameValid || !enteredemailValid) {
-      return;
-    }
-    console.log(enteredname);
-
     resetPasswordInput();
     resetNameInput();
     resetEmailInput();
     resetconfirmPassword();
-    // NameInputRef.current.value = "";
-    // this useRef() method to empty the input box is not ideal as you cannot directly manipulate the DOM
   };
   const NameInputClass = EnteredNameHasError
     ? "name-control-invalid"
