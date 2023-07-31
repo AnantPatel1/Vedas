@@ -16,11 +16,15 @@ You can check out the live demo of the project [here](https://anant-vedas.netlif
 
 Include some visually appealing screenshots of your project here to give users an idea of its interface and features. You can use the following format:
 
-![Screenshot 2023-07-31 183943](https://github.com/AnantPatel1/Vedas/assets/106820511/9a2bba34-ba67-4db1-92b9-3d55efe52167)
+![Screenshot 2023-07-31 183943](https://github.com/AnantPatel1/Vedas/assets/106820511/e7b2a1e5-f70f-47a4-9968-e1a08e968c13)
 
-![Screenshot 2023-07-31 184015](https://github.com/AnantPatel1/Vedas/assets/106820511/722bc5fc-500b-4dbd-bb20-9b16ff5968ab)
 
-![Screenshot 2023-07-31 184103](https://github.com/AnantPatel1/Vedas/assets/106820511/b3be27ed-53d9-4d42-a78e-6edc0bd5bd10)
+![Screenshot 2023-07-31 185546](https://github.com/AnantPatel1/Vedas/assets/106820511/94d0d543-c9fa-4941-897d-4e9f9f088d96)
+
+
+![Screenshot 2023-07-31 185607](https://github.com/AnantPatel1/Vedas/assets/106820511/9b0dd7a3-3d6f-4a2e-aef4-5c5e172dad29)
+
+
 
 ![Screenshot 2023-07-31 184143](https://github.com/AnantPatel1/Vedas/assets/106820511/b7e3a9ac-fed2-43f4-ac5e-1887d369ceba)
 
