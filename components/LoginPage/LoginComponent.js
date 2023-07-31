@@ -1,6 +1,6 @@
 import Link from "next/link";
 import useInput from "../../Hooks/use-input";
-import styles from "../common.module.css";
+import styles from "../../styles/common.module.css";
 import { BsArrowLeft } from "react-icons/bs";
 import Icons from "../Reusable/Icons";
 import Option from "../Reusable/Option";

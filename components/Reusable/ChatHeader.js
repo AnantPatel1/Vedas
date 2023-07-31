@@ -4,22 +4,13 @@ import { BsArrowLeft } from "react-icons/bs";
 import Image from "next/image";
 import bot from "../../Assets/aryaai.svg";
 import Link from "next/link";
-import { AuthContext } from "../../security/AuthProvider";
 import { auth } from "@/security/firebase";
-import { useRouter } from "next/router";
 export default function ChatHeader() {
-  const { currentUser } = useContext(AuthContext);
   const logout = () => {
     auth.signOut().catch((error) => {
       console.error(error);
     });
-    console.log("logged out");
-    // router.push("/Login");
   };
-  const isLoggedout = !!currentUser;
-  const router = useRouter();
-  // useEffect(() => {
-  // }, [isLoggedout, router]);
   return (
     <div className={styles.header}>
       <div className={styles.box1}>

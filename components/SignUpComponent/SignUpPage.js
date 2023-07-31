@@ -1,198 +1,162 @@
-import Link from "next/link";
+import React from "react";
 import useInput from "../../Hooks/use-input";
-import styles from "../common.module.css";
-import { BsArrowLeft } from "react-icons/bs";
-import theme from "../../Assets/Logo.png";
-import Image from "next/image";
-export default function SignUp() {
-  let EnteredConfirmPasswordHasError = false;
-  const {
-    value: EnteredName,
-    isValid: EnteredNameIsValid,
-    haserror: EnteredNameHasError,
-    enteredValueHandler: EnteredNameHandler,
-    InputBlurHandler: InputNameBlurHandler,
-    resetForm: resetNameInput,
-  } = useInput((value) => value.trim() !== "");
-  const {
-    value: enteredpassword,
-    isValid: enteredpasswordValid,
-    haserror: EnteredPasswordHasError,
-    enteredValueHandler: enteredpasswordHandler,
-    InputBlurHandler: PasswordInputBlurHandler,
-    resetForm: resetPasswordInput,
-  } = useInput((value) => value.length > 8);
+import styles from "../../styles/common.module.css";
+
+const SignUpForm = () => {
+  const isNotEmpty = (value) => value.trim() !== "";
+  const isEmail = (value) => value.includes("@");
+  const isPasswordValid = (value) => value.length > 8;
 
   const {
-    value: enteredemail,
-    isValid: enteredemailValid,
-    haserror: EnteredEamilHasError,
-    enteredValueHandler: enteredemailHandler,
-    InputBlurHandler: EmailInputBlurHandler,
-    resetForm: resetEmailInput,
-  } = useInput((value) => value.includes("@"));
-  let formValid = false;
+    value: enteredName,
+    isValid: enteredNameIsValid,
+    hasError: enteredNameHasError,
+    enteredValueHandler: enteredNameHandler,
+    InputBlurHandler: inputNameBlurHandler,
+    resetForm: resetNameInput,
+  } = useInput(isNotEmpty);
+
   const {
-    value: enteredconfirmPassword,
-    isValid: confirmPasswordisValid,
-    resetForm: resetconfirmPassword,
-    enteredValueHandler: enteredconfirmPasswordHandler,
-  } = useInput((value) => value.length > 8);
-  if (enteredconfirmPassword != enteredconfirmPassword) {
-    EnteredConfirmPasswordHasError = true;
-  }
-  if (enteredconfirmPassword === enteredconfirmPassword) {
-    EnteredConfirmPasswordHasError = false;
-  }
+    value: enteredEmail,
+    isValid: enteredEmailIsValid,
+    hasError: enteredEmailHasError,
+    enteredValueHandler: enteredEmailHandler,
+    InputBlurHandler: inputEmailBlurHandler,
+    resetForm: resetEmailInput,
+  } = useInput(isEmail);
+
+  const {
+    value: enteredPassword,
+    isValid: enteredPasswordIsValid,
+    hasError: enteredPasswordHasError,
+    enteredValueHandler: enteredPasswordHandler,
+    InputBlurHandler: inputPasswordBlurHandler,
+    resetForm: resetPasswordInput,
+  } = useInput(isPasswordValid);
+
+  const {
+    value: enteredConfirmPassword,
+    isValid: confirmPasswordIsValid,
+    resetForm: resetConfirmPassword,
+    enteredValueHandler: enteredConfirmPasswordHandler,
+  } = useInput(isPasswordValid);
+
+  let formIsValid = false;
 
   if (
-    EnteredNameIsValid &&
-    enteredemailValid &&
-    enteredpasswordValid &&
-    confirmPasswordisValid
+    enteredNameIsValid &&
+    enteredEmailIsValid &&
+    enteredPasswordIsValid &&
+    confirmPasswordIsValid
   ) {
-    formValid = true;
+    formIsValid = true;
   }
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
 
-    if (!enterednameValid || !enteredemailValid) {
+    if (!formIsValid) {
       return;
     }
-    console.log(enteredname);
 
-    resetPasswordInput();
+    // Perform the sign-up logic here with the form data
+    // console.log("Form submitted!");
+    // console.log("Name:", enteredName);
+    // console.log("Email:", enteredEmail);
+    // console.log("Password:", enteredPassword);
+    // console.log("Confirm Password:", enteredConfirmPassword);
+
     resetNameInput();
     resetEmailInput();
-    resetconfirmPassword();
-    // NameInputRef.current.value = "";
-    // this useRef() method to empty the input box is not ideal as you cannot directly manipulate the DOM
+    resetPasswordInput();
+    resetConfirmPassword();
   };
-  const NameInputClass = EnteredNameHasError
+
+  // Add classes for styling the input fields based on validation errors
+  const nameInputClass = enteredNameHasError
     ? "name-control-invalid"
     : "form-control";
-  const EmailInputClass = EnteredEamilHasError
+  const emailInputClass = enteredEmailHasError
     ? "email-control-invalid"
     : "form-control";
-  const PasswordInputClass = EnteredPasswordHasError
+  const passwordInputClass = enteredPasswordHasError
     ? "password-control-invalid"
     : "form-control";
-  const ConfirmPasswordInputClass = EnteredConfirmPasswordHasError
-    ? "confpasssword-control-invalid"
-    : "form-control";
+  const confirmPasswordInputClass =
+    enteredPassword !== enteredConfirmPassword
+      ? "confpassword-control-invalid"
+      : "form-control";
+
   return (
-    <div className={styles.container}>
-      <div>
-        <Link href="/">
-          <BsArrowLeft
-            style={{ margin: "40px 20px 0px 20px", fontSize: "20px" }}
-          />
-        </Link>
-      </div>
-      <div className={styles.themeContainer}>
-        <Image
-          className={styles.theme}
-          src={theme}
-          alt="Theme"
-          width={100}
-          height={100}
+    <form className={styles.inputBox} onSubmit={formSubmitHandler}>
+      <div className={styles[nameInputClass]}>
+        <p style={{ marginBottom: "10px" }}>Your name</p>
+        <input
+          type="text"
+          id="name"
+          onChange={enteredNameHandler}
+          onBlur={inputNameBlurHandler}
+          value={enteredName}
+          style={{ height: "20px" }}
+          className={styles.inputbtn}
         />
+        {enteredNameHasError && (
+          <p style={{ color: "red", fontSize: "10px", float: "right" }}>
+            Enter a valid name
+          </p>
+        )}
       </div>
-      <div className={styles.loginContainer}>
-        <header className={styles.header}>SignUp with Email</header>
-        <div className={styles.description}>
-          Welcome back! Sign in using your social account or email to continue
-          us
-        </div>
+      <div className={styles[emailInputClass]}>
+        <p style={{ marginBottom: "10px" }}>Your email</p>
+        <input
+          type="text"
+          id="email"
+          onChange={enteredEmailHandler}
+          onBlur={inputEmailBlurHandler}
+          value={enteredEmail}
+          style={{ height: "20px" }}
+          className={styles.inputbtn}
+        />
+        {enteredEmailHasError && (
+          <p style={{ color: "red", fontSize: "10px", float: "right" }}>
+            Enter a valid email
+          </p>
+        )}
       </div>
-      <form className={styles.inputBox} onSubmit={formSubmitHandler}>
-        <div className={`${styles[NameInputClass]}`}>
-          <p style={{ marginBottom: "10px" }}>Your name</p>
-          <input
-            type="text"
-            id="name"
-            onChange={EnteredNameHandler}
-            onBlur={InputNameBlurHandler}
-            value={EnteredName}
-            style={{ height: "20px" }}
-            className={styles.inputbtn}
-          />
-          {EnteredNameHasError && (
-            <p style={{ color: "red", fontSize: "10px", float: "right" }}>
-              Enter the valid name
-            </p>
-          )}
-        </div>
-        <div className={`${styles[EmailInputClass]}`}>
-          <p style={{ marginBottom: "10px" }}>Your email</p>
-          <input
-            type="text"
-            id="email"
-            onChange={enteredemailHandler}
-            onBlur={EmailInputBlurHandler}
-            value={enteredemail}
-            style={{ height: "20px" }}
-            className={styles.inputbtn}
-          />
-          {EnteredEamilHasError && (
-            <p style={{ color: "red", fontSize: "10px", float: "right" }}>
-              Enter valid email
-            </p>
-          )}
-        </div>
-        <div className={`${styles[PasswordInputClass]}`}>
-          <p>Password</p>
-          <input
-            type="password"
-            id="password"
-            onChange={enteredpasswordHandler}
-            onBlur={EmailInputBlurHandler}
-            value={enteredpassword}
-            style={{ height: "20px" }}
-            className={styles.inputbtn}
-          />
-          {EnteredPasswordHasError && (
-            <p style={{ color: "red", fontSize: "10px", float: "right" }}>
-              Enter valid Password
-            </p>
-          )}
-        </div>
-        <div className={`${styles[ConfirmPasswordInputClass]}`}>
-          <p>Confirm Passward</p>
-          <input
-            type="password"
-            id="confirmpassword"
-            onChange={enteredconfirmPasswordHandler}
-            onBlur={PasswordInputBlurHandler}
-            value={enteredconfirmPassword}
-            style={{ height: "20px" }}
-            className={styles.inputbtn}
-          />
-          {EnteredConfirmPasswordHasError && (
-            <p style={{ color: "red", fontSize: "10px", float: "right" }}>
-              Enter valid Password
-            </p>
-          )}
-        </div>
-      </form>
-      <div className={styles.signupbox} style={{ margin: "40px 20px" }}>
-        <Link className={styles.link} href="/chat">
-          Create an account
-        </Link>
-        <p>
-          <Link
-            href="/Login"
-            style={{
-              color: "#FFC746",
-              textDecoration: "none",
-              marginLeft: "2px",
-            }}
-          >
-            Forgot Password?
-          </Link>
-        </p>
+      <div className={styles[passwordInputClass]}>
+        <p>Password</p>
+        <input
+          type="password"
+          id="password"
+          onChange={enteredPasswordHandler}
+          onBlur={inputPasswordBlurHandler}
+          value={enteredPassword}
+          style={{ height: "20px" }}
+          className={styles.inputbtn}
+        />
+        {enteredPasswordHasError && (
+          <p style={{ color: "red", fontSize: "10px", float: "right" }}>
+            Password must be at least 8 characters long
+          </p>
+        )}
       </div>
-    </div>
+      <div className={styles[confirmPasswordInputClass]}>
+        <p>Confirm Password</p>
+        <input
+          type="password"
+          id="confirmpassword"
+          onChange={enteredConfirmPasswordHandler}
+          value={enteredConfirmPassword}
+          style={{ height: "20px" }}
+          className={styles.inputbtn}
+        />
+        {enteredPassword !== enteredConfirmPassword && (
+          <p style={{ color: "red", fontSize: "10px", float: "right" }}>
+            Passwords do not match
+          </p>
+        )}
+      </div>
+    </form>
   );
-}
+};
+export default SignUpForm;

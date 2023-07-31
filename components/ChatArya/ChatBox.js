@@ -69,6 +69,7 @@ const ChatBox = () => {
           width={25}
           height={25}
           alt="send"
+          loading="lazy"
         />
         <Image
           className={styles.microbtn}
@@ -76,6 +77,7 @@ const ChatBox = () => {
           width={25}
           height={25}
           alt="send"
+          loading="lazy"
         />
       </form>
     </div>
